@@ -25,6 +25,8 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
+        }
+    
     }
 
     @Test
@@ -111,7 +113,7 @@ class CalculatorTest {
         void testIntegerSquareRoot() {
             Calculator calc = new Calculator();
             calc.pressDigitKey(9);
-            calc.pressDigitKey(0););
+            calc.pressDigitKey(0);
             calc.pressUnaryOperationKey("√");
             String expected = "3";
             String actual = calc.readScreen();
@@ -132,5 +134,16 @@ class CalculatorTest {
         String actual = calc.readScreen();
         assertEquals(expected, actual);
 
+        @Test
+        @DisplayName("Bugfix; should subtract negative numbers")
+        void fixSubtractNegativeNumbers() {
+        Calculator calc = new Calculator();
+        }
+
+        @Test
+        @DisplayName("Bugfix should calculate integer square root")
+        void fixIntegerSquareRoot() { 
+
 }
+    }
 
