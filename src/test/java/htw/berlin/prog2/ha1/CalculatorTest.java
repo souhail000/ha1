@@ -104,5 +104,19 @@ class CalculatorTest {
         calc.pressEqualsKey();
         String expected = "32";
         String actual = calc.readScreen();
+        
+
+        @Test 
+        @DisplayName("should calculate integer square root")
+        void testIntegerSquareRoot() {
+            Calculator calc = new Calculator();
+            calc.pressDigitKey(9);
+            calc.pressDigitKey(0););
+            calc.pressUnaryOperationKey("√");
+            String expected = "3";
+            String actual = calc.readScreen();
+            assertEquals(expected, actual);
+        }
+
 }
 
