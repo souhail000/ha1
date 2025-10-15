@@ -118,5 +118,19 @@ class CalculatorTest {
             assertEquals(expected, actual);
         }
 
+
+        @Test
+        @DisplayName("should subtract negative numbers")
+        Calculator calc = new Calculator();
+        calc.pressDigitKey(-5);
+        calc.pressNegativeKey(0);    
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(-2);
+        calc.pressNegativeKey(0);
+        calc.pressEqualsKey();
+        String expected = "-30";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+
 }
 
