@@ -1,11 +1,14 @@
 package htw.berlin.prog2.ha1;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import htw.berlin.prog2.ha1.Calculator;
 
+@Nested
 @DisplayName("Retro calculator")
 class CalculatorTest {
 
@@ -25,8 +28,6 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-        }
-    
     }
 
     @Test
@@ -91,9 +92,7 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
-
     //TODO hier weitere Tests erstellen
-
     @Test
     @DisplayName("should display result after subtracting two positive multi-digit numbers")
     void testPositiveSubtraction() {
@@ -106,11 +105,9 @@ class CalculatorTest {
         calc.pressEqualsKey();
         String expected = "32";
         String actual = calc.readScreen();
-        
 
-        @Test 
-        @DisplayName("should calculate integer square root")
-        void testIntegerSquareRoot() {
+
+        void testIntegerSquareRoot () {
             Calculator calc = new Calculator();
             calc.pressDigitKey(9);
             calc.pressDigitKey(0);
@@ -121,29 +118,23 @@ class CalculatorTest {
         }
 
 
-        @Test
-        @DisplayName("should subtract negative numbers")
-        Calculator calc = new Calculator();
-        calc.pressDigitKey(-5);
-        calc.pressNegativeKey(0);    
-        calc.pressBinaryOperationKey("-");
-        calc.pressDigitKey(-2);
-        calc.pressNegativeKey(0);
-        calc.pressEqualsKey();
-        String expected = "-30";
-        String actual = calc.readScreen();
-        assertEquals(expected, actual);
-
-        @Test
-        @DisplayName("Bugfix; should subtract negative numbers")
-        void fixSubtractNegativeNumbers() {
-        Calculator calc = new Calculator();
+        @Test @DisplayName("should subtract negative numbers") Calculator calc = new Calculator();
+        void subtractsNegativeNumber () {
+            calc.pressDigitKey(5);
+            calc.pressNegativeKey(0);
+            calc.pressBinaryOperationKey("-");
+            calc.pressDigitKey(2);
+            calc.pressNegativeKey(0);
+            calc.pressEqualsKey();
+            String expected = "-30";
+            String actual = calc.readScreen();
+            assertEquals(expected, actual);
         }
-
-        @Test
-        @DisplayName("Bugfix should calculate integer square root")
-        void fixIntegerSquareRoot() { 
-
-}
     }
+}
+
+
+
+
+
 
