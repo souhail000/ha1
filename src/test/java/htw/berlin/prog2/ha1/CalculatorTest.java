@@ -18,7 +18,7 @@ class CalculatorTest {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(2);
-        calc.pressDigitKey(0);
+        calc.pressDigitKey(0); //s
         calc.pressBinaryOperationKey("+");
         calc.pressDigitKey(2);
         calc.pressDigitKey(0);
@@ -79,7 +79,6 @@ class CalculatorTest {
     @DisplayName("should not allow multiple decimal dots")
     void testMultipleDecimalDots() {
         Calculator calc = new Calculator();
-
         calc.pressDigitKey(1);
         calc.pressDotKey();
         calc.pressDigitKey(7);
@@ -105,6 +104,7 @@ class CalculatorTest {
         calc.pressEqualsKey();
         String expected = "32";
         String actual = calc.readScreen();
+    }
 
 
         void testIntegerSquareRoot () {
@@ -118,20 +118,20 @@ class CalculatorTest {
         }
 
 
-        @Test @DisplayName("should subtract negative numbers") Calculator calc = new Calculator();
+        @Test @DisplayName("should subtract negative numbers")
         void subtractsNegativeNumber () {
+            Calculator calc = new Calculator();
             calc.pressDigitKey(5);
-            calc.pressNegativeKey(0);
+            calc.pressDigitKey(0);
             calc.pressBinaryOperationKey("-");
             calc.pressDigitKey(2);
-            calc.pressNegativeKey(0);
+            calc.pressDigitKey(0);
             calc.pressEqualsKey();
             String expected = "-30";
             String actual = calc.readScreen();
             assertEquals(expected, actual);
         }
     }
-}
 
 
 
