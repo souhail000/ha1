@@ -108,9 +108,9 @@ class CalculatorTest {
         String actual = calc.readScreen();
     }
 
-        @Test
-        @DisplayName("should calculate integer square root\"")
-        void testIntegerSquareRoot () {
+    @Test
+    @DisplayName("should calculate integer square root\"")
+    void testIntegerSquareRoot () {
             Calculator calc = new Calculator();
             calc.pressDigitKey(9);
             calc.pressDigitKey(0);
@@ -121,22 +121,21 @@ class CalculatorTest {
         }
 
 
-        @Test @DisplayName("should subtract negative numbers")
-        void subtractsNegativeNumber () {
+    @Test
+    @DisplayName("bei gleichzeichen ohne operation bleibt anzeige gleich")
+    void equalsWithoutOpStaysTheSame() {
             Calculator calc = new Calculator();
-            calc.pressDigitKey(5);
-            calc.pressDigitKey(0);
-            calc.pressBinaryOperationKey("-");
-            calc.pressDigitKey(2);
-            calc.pressDigitKey(0);
+            calc.pressDigitKey(7);
             calc.pressEqualsKey();
-            String expected = "-30";
-            String actual = calc.readScreen();
-            assertEquals(expected, actual);
-        }
-
-
+            assertEquals("7", calc.readScreen());
     }
+
+
+
+}
+
+
+
 
 
 
