@@ -123,6 +123,8 @@ public class Calculator {
             case "-" -> latestValue - Double.parseDouble(screen);
             case "x" -> latestValue * Double.parseDouble(screen);
             case "/" -> latestValue / Double.parseDouble(screen);
+            //bugix test 2 gleichzeichen
+            case "" -> Double.parseDouble(screen);
             default -> throw new IllegalArgumentException();
         };
         screen = Double.toString(result);
